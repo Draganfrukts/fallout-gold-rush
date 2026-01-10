@@ -6,6 +6,7 @@
 #define MUTE_PRAY (1<<2)
 #define MUTE_ADMINHELP (1<<3)
 #define MUTE_DEADCHAT (1<<4)
+#define MUTE_LOOC (1<<5)
 #define MUTE_ALL (~0)
 
 //Some constants for DB_Ban
@@ -153,3 +154,10 @@ GLOBAL_VAR_INIT(ghost_role_flags, (~0))
 /// Used in logging uses of admin verbs (and sometimes some non-admin or debug verbs) to the blackbox
 /// Only pass it a string key, the verb being used.
 #define BLACKBOX_LOG_ADMIN_VERB(the_verb) SSblackbox.record_feedback("tally", "admin_verb", 1, the_verb)
+
+/// State when an interview has been approved
+#define INTERVIEW_APPROVED "interview_approved"
+/// State when an interview as been denied
+#define INTERVIEW_DENIED "interview_denied"
+/// State when an interview has had no action on it yet
+#define INTERVIEW_PENDING "interview_pending"
